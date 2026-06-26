@@ -14,9 +14,9 @@ export default function Navigation() {
         backdrop-blur-md
       "
     >
-      <div className="flex justify-between items-center px-12 lg:px-16 py-3">
+      <div className="flex justify-between items-center gap-4 px-5 sm:px-12 lg:px-16 py-3">
 
-        <div>
+        <div className="shrink-0">
           <Image
             src="/logo/oal-logo.png"
             alt="OAL"
@@ -26,9 +26,9 @@ export default function Navigation() {
           />
         </div>
 
-        <nav className="flex gap-8 text-sm">
+        <nav className="flex gap-4 sm:gap-8 text-xs sm:text-sm">
           {nav.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a key={item.href} href={item.href} className="whitespace-nowrap">
               {item.label}
             </a>
           ))}

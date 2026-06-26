@@ -1,9 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { studio } from "@/data/site";
 
 const services = studio.services;
 
 export default function Studio() {
+  // 모바일 탭으로 카드 뒤집기 (PC는 호버로 동작)
+  const [flipped, setFlipped] = useState<Record<number, boolean>>({});
+  const toggle = (i: number) =>
+    setFlipped((prev) => ({ ...prev, [i]: !prev[i] }));
+
   return (
     <section
       id="studio"
@@ -59,10 +67,11 @@ export default function Studio() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="group h-44 [perspective:1200px]"
+              onClick={() => toggle(i)}
+              className="group h-44 [perspective:1200px] cursor-pointer"
             >
               <div
-                className="
+                className={`
                   relative
                   h-full
                   w-full
@@ -71,7 +80,8 @@ export default function Studio() {
                   ease-out
                   [transform-style:preserve-3d]
                   group-hover:[transform:rotateY(180deg)]
-                "
+                  ${flipped[i] ? "[transform:rotateY(180deg)]" : ""}
+                `}
               >
                 {/* FRONT */}
                 <div
