@@ -23,18 +23,39 @@ export const nav = [
   { label: "CONTACT", href: "#contact" },
 ];
 
-// 3) CURRENT SLATE (진행 중인 프로젝트 목록)
-//    status 예: "In Development" / "Packaging" / "Release Scheduled" 등
+// 3) CURRENT SLATE (진행 중인 프로젝트 — 포스터 그리드)
+//    status 예: "In Development" / "Packaging" / "Release Scheduled" / "개봉 확정" 등
 //    잠시 숨기려면 그 줄 끝에  hidden: true  를 추가하세요.
+//
+//    포스터·예고편 넣는 법 (OKAY MADAM 2 참고)
+//     • poster:      public/posters/ 에 이미지 파일을 넣고 "/posters/파일명.jpg" 로 적기.
+//                    poster 가 없으면 "개발 중" 플레이스홀더 카드로 보입니다.
+//     • releaseDate: 개봉일이 확정되면 "2026.08.12" 처럼 적기 → 포스터에 배지로 노출.
+//     • 예고편은 둘 중 하나 (있으면 포스터에 ▶ 버튼 → 팝업 재생):
+//         - trailer:  로컬 mp4 경로 "/videos/파일명.mp4"  ※ 단, GitHub 100MB 제한을
+//                     넘는 파일은 push/배포가 안 됩니다. 그럴 땐 Vimeo 를 쓰세요.
+//         - vimeoId:  Vimeo 영상의 숫자 ID (예: vimeo.com/12345678 → "12345678")
 type SlateItem = {
   title: string;
   type: string;
   status: string;
+  poster?: string; // "/posters/..." — 있으면 포스터, 없으면 개발 중 카드
+  releaseDate?: string; // "2026.08.12" — 있으면 포스터에 개봉일 배지 노출
+  trailer?: string; // 로컬 mp4 "/videos/..." (100MB 미만일 때만 배포됨)
+  vimeoId?: string; // Vimeo 예고편 ID (로컬 mp4 대신 쓸 때)
   hidden?: boolean; // true면 화면에서 숨김 (없으면 보임)
 };
 
 export const currentSlate: SlateItem[] = [
-  { title: "OKAY MADAM 2", type: "Feature Film", status: "Release Scheduled" },
+  {
+    title: "OKAY MADAM 2",
+    type: "Feature Film",
+    status: "개봉 확정",
+    poster: "/posters/ok-madam-2-poster.jpeg",
+    releaseDate: "2026.08.12",
+    trailer: "/videos/ok-madam-2-trailer.mp4", // 4.2MB — 로컬 재생 OK
+    // vimeoId: "",  // Vimeo 로 올릴 경우 여기에 숫자 ID
+  },
   { title: "돈벼락과 연애의 상관관계", type: "Series", status: "Packaging" },
   { title: "너를 사랑하라", type: "Feature Film", status: "In Development" },
   { title: "냉동인간", type: "Feature Film", status: "In Development" },

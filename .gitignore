@@ -40,6 +40,8 @@ yarn-error.log*
 # (trailers play via Vimeo). Keep oal-showreel.mp4 (hero background) only.
 /public/videos/*-trailer.mp4
 /public/videos/I-kill-u-trailer.mp4
+# OKAY MADAM 2 예고편(4.2MB)은 슬레이트에서 로컬 재생 → 커밋 허용.
+!/public/videos/ok-madam-2-trailer.mp4
 
 # typescript
 *.tsbuildinfo
