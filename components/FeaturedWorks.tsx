@@ -36,22 +36,26 @@ export default function FeaturedWorks() {
       id="works"
       className="bg-black text-white pt-20 pb-0 px-8"
     >
-      <h2 className="text-lg font-bold tracking-[0.3em] text-[#39D5F2] mb-12">
-        {language === "ko" ? "주요 작품" : "FEATURED WORKS"}
-      </h2>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-lg font-bold tracking-[0.3em] text-[#39D5F2] mb-12">
+          {language === "ko" ? "주요 작품" : "FEATURED WORKS"}
+        </h2>
 
-      <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-5 gap-6">
-        {works.map((work, i) => (
-          <Link
-            key={work.titleEn}
-            href={`/works/${work.slug}`}
-            style={{ transitionDelay: visible ? `${i * 500}ms` : "0ms" }}
-            className={`
-              group block
-              transition-all duration-700 ease-out
-              ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-            `}
-          >
+        <div
+          ref={gridRef}
+          className="grid grid-cols-2 gap-6 md:mx-auto md:max-w-[60rem] md:grid-cols-3 md:gap-x-10 md:gap-y-16"
+        >
+          {works.map((work, i) => (
+            <Link
+              key={work.titleEn}
+              href={`/works/${work.slug}`}
+              style={{ transitionDelay: visible ? `${i * 500}ms` : "0ms" }}
+              className={`
+                group block
+                transition-all duration-700 ease-out
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+              `}
+            >
             <div
               className="
                 relative
@@ -176,8 +180,9 @@ export default function FeaturedWorks() {
             <p className="text-neutral-500 text-sm mt-2">
               {work.releaseDate ?? work.year}
             </p>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

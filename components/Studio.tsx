@@ -165,7 +165,7 @@ export default function Studio() {
                     border-white/10
                   "
                 >
-                  <span className="text-2xl font-bold text-neutral-600">
+                  <span className="text-2xl font-bold text-[#39D5F2]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h4 className="font-bold text-xl leading-snug text-white">
