@@ -38,7 +38,7 @@ export default function Navigation() {
         </Link>
 
         <nav
-          className="flex items-center gap-2 text-[10px] sm:gap-8 sm:text-sm"
+          className="flex items-center gap-2 text-xs sm:gap-8 sm:text-base"
           aria-label={language === "ko" ? "주요 메뉴" : "Primary navigation"}
         >
           {nav.map((item) => (
@@ -63,7 +63,7 @@ export default function Navigation() {
                 onClick={() => setLanguage(option)}
                 aria-pressed={language === option}
                 aria-label={option === "ko" ? "한국어로 보기" : "View in English"}
-                className={`h-9 min-w-6 text-[9px] font-bold tracking-[0.04em] transition-colors sm:min-w-8 sm:text-xs sm:tracking-[0.08em] ${
+                className={`h-9 min-w-6 text-xs font-bold tracking-[0.04em] transition-colors sm:min-w-8 sm:text-sm sm:tracking-[0.08em] ${
                   language === option
                     ? "text-[#39D5F2]"
                     : "text-neutral-500 hover:text-white focus-visible:text-white"
