@@ -34,7 +34,7 @@ export default function FeaturedWorks() {
   return (
     <section
       id="works"
-      className="bg-black text-white pt-20 pb-32 px-8"
+      className="bg-black text-white pt-20 pb-0 px-8"
     >
       <h2 className="text-lg font-bold tracking-[0.3em] text-[#39D5F2] mb-12">
         {language === "ko" ? "주요 작품" : "FEATURED WORKS"}

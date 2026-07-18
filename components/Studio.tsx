@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { studio } from "@/data/site";
 
@@ -9,10 +9,48 @@ const services = studio.services;
 
 export default function Studio() {
   const { language } = useLanguage();
+  const showreelRef = useRef<HTMLVideoElement>(null);
   // 모바일 탭으로 카드 뒤집기 (PC는 호버로 동작)
   const [flipped, setFlipped] = useState<Record<number, boolean>>({});
   const toggle = (i: number) =>
     setFlipped((prev) => ({ ...prev, [i]: !prev[i] }));
+
+  useEffect(() => {
+    const video = showreelRef.current;
+    if (!video) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let isNearViewport = false;
+
+    const syncPlayback = () => {
+      if (reducedMotion.matches || !isNearViewport) {
+        video.pause();
+        return;
+      }
+
+      void video.play().catch(() => {
+        // Autoplay can still be blocked by a user agent preference.
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isNearViewport = entry.isIntersecting;
+        syncPlayback();
+      },
+      { rootMargin: "240px 0px", threshold: 0 }
+    );
+
+    observer.observe(video);
+    reducedMotion.addEventListener("change", syncPlayback);
+    syncPlayback();
+
+    return () => {
+      observer.disconnect();
+      reducedMotion.removeEventListener("change", syncPlayback);
+      video.pause();
+    };
+  }, []);
 
   return (
     <section
@@ -25,19 +63,36 @@ export default function Studio() {
           {language === "ko" ? "제작사" : "COMPANY"}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid md:grid-cols-2 md:gap-x-16">
 
-          {/* 좌측: OAL 이름 + 회사 설명 */}
-          <div>
+          {/* 좌측 상단: OAL 이름 + 로고 */}
+          <div className="md:col-start-1 md:row-start-1">
 
             <p className="text-[#39D5F2] text-sm tracking-[0.25em] mb-6">
               {studio.eyebrow}
             </p>
 
-            <h3 className="text-3xl md:text-5xl font-bold mb-8">
-              {studio.name}
-            </h3>
+            <div className="grid grid-cols-[max-content_1fr] items-center mb-8">
+              <h3 className="text-3xl md:text-5xl font-bold">
+                {studio.name}
+              </h3>
+              <span className="flex min-w-0 justify-center">
+                <span className="relative block h-12 w-10 md:h-14 md:w-12 shrink-0 overflow-hidden">
+                  <Image
+                    src="/logo/oal-logo.png"
+                    alt=""
+                    width={1428}
+                    height={1205}
+                    className="absolute left-1/2 top-0 h-auto w-20 md:w-24 max-w-none -translate-x-1/2"
+                  />
+                </span>
+              </span>
+            </div>
 
+          </div>
+
+          {/* 좌측 하단: 회사 설명 */}
+          <div className="md:col-start-1 md:row-start-2">
             {studio.paragraphs[language].map((text, i) => (
               <p
                 key={i}
@@ -51,15 +106,20 @@ export default function Studio() {
 
           </div>
 
-          {/* 우측: 큰 로고 */}
-          <div className="flex justify-center md:justify-end">
-            <Image
-              src="/logo/oal-logo.png"
-              alt="OAL"
-              width={1428}
-              height={1205}
-              className="w-full max-w-xs md:max-w-sm h-auto"
-            />
+          {/* 우측: OAL 쇼릴 */}
+          <div className="mt-12 aspect-[7/3] w-full overflow-hidden border border-white/10 bg-neutral-950 md:col-start-2 md:row-start-2 md:mt-0">
+            <video
+              ref={showreelRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="OAL showreel"
+              className="h-full w-full object-cover"
+            >
+              <source src="/videos/oal-showreel.mp4" type="video/mp4" />
+            </video>
           </div>
 
         </div>
