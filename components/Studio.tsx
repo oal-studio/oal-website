@@ -55,7 +55,7 @@ export default function Studio() {
   return (
     <section
       id="studio"
-      className="bg-black text-white pt-20 pb-32 px-8"
+      className="bg-black text-white pt-20 pb-0 px-8"
     >
       <div className="max-w-6xl mx-auto">
 
