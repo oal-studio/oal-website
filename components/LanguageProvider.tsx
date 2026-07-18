@@ -41,6 +41,25 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = language;
   }, [language]);
 
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (!targetId) return;
+
+    let secondFrame: number | undefined;
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      if (secondFrame !== undefined) {
+        window.cancelAnimationFrame(secondFrame);
+      }
+    };
+  }, [language]);
+
   const value = useMemo(() => ({ language, setLanguage }), [language]);
 
   return (
