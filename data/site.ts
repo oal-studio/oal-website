@@ -48,7 +48,7 @@ type SlateItem = {
 
 export const currentSlate: SlateItem[] = [
   {
-    title: "OKAY MADAM 2",
+    title: "오케이 마담 2",
     type: "Feature Film",
     status: "개봉 확정",
     poster: "/posters/ok-madam-2-poster.jpeg",
