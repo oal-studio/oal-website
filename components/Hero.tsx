@@ -25,10 +25,17 @@ export default function Hero() {
           {hero.eyebrow}
         </p>
 
-        <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl">
+        <h1
+          className={`font-bold md:text-7xl lg:text-8xl ${
+            language === "ko" ? "text-[clamp(2rem,10vw,3rem)]" : "text-5xl"
+          }`}
+        >
           {hero.titleLines[language].map((line, index) => (
-            <span key={line}>
-              {index > 0 && <br />}
+            <span
+              key={line}
+              className={language === "ko" ? "block whitespace-nowrap" : undefined}
+            >
+              {language === "en" && index > 0 && <br />}
               {line}
             </span>
           ))}

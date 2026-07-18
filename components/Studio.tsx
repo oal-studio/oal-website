@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { studio } from "@/data/site";
 
 const services = studio.services;
+const SHOW_SERVICES = false;
 
 export default function Studio() {
   const { language } = useLanguage();
@@ -124,86 +125,88 @@ export default function Studio() {
 
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-20">
+        {SHOW_SERVICES && (
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-20">
 
-          {services.map((service, i) => (
-            <button
-              type="button"
-              key={service.title.en}
-              onClick={() => toggle(i)}
-              aria-pressed={Boolean(flipped[i])}
-              aria-label={`${service.title[language]} — ${service.desc[language]}`}
-              className="group h-44 w-full text-left [perspective:1200px] cursor-pointer"
-            >
-              <div
-                className={`
-                  relative
-                  h-full
-                  w-full
-                  transition-transform
-                  duration-[600ms]
-                  ease-out
-                  [transform-style:preserve-3d]
-                  group-hover:[transform:rotateY(180deg)]
-                  ${flipped[i] ? "[transform:rotateY(180deg)]" : ""}
-                `}
+            {services.map((service, i) => (
+              <button
+                type="button"
+                key={service.title.en}
+                onClick={() => toggle(i)}
+                aria-pressed={Boolean(flipped[i])}
+                aria-label={`${service.title[language]} — ${service.desc[language]}`}
+                className="group h-44 w-full text-left [perspective:1200px] cursor-pointer"
               >
-                {/* FRONT */}
                 <div
-                  className="
-                    absolute
-                    inset-0
-                    [backface-visibility:hidden]
-                    rounded-2xl
-                    p-6
-                    flex
-                    flex-col
-                    justify-between
-
-                    bg-white/[0.04]
-                    border
-                    border-white/10
-                  "
+                  className={`
+                    relative
+                    h-full
+                    w-full
+                    transition-transform
+                    duration-[600ms]
+                    ease-out
+                    [transform-style:preserve-3d]
+                    group-hover:[transform:rotateY(180deg)]
+                    ${flipped[i] ? "[transform:rotateY(180deg)]" : ""}
+                  `}
                 >
-                  <span className="text-2xl font-bold text-[#39D5F2]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h4 className="font-bold text-xl leading-snug text-white">
-                    {service.title[language]}
-                  </h4>
+                  {/* FRONT */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      [backface-visibility:hidden]
+                      rounded-2xl
+                      p-6
+                      flex
+                      flex-col
+                      justify-between
+
+                      bg-white/[0.04]
+                      border
+                      border-white/10
+                    "
+                  >
+                    <span className="text-2xl font-bold text-[#39D5F2]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h4 className="font-bold text-xl leading-snug text-white">
+                      {service.title[language]}
+                    </h4>
+                  </div>
+
+                  {/* BACK */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      [backface-visibility:hidden]
+                      [transform:rotateY(180deg)]
+                      rounded-2xl
+                      p-6
+                      flex
+                      flex-col
+                      justify-center
+                      text-center
+
+                      bg-gradient-to-br
+                      from-[#39D5F2]
+                      to-[#1591ad]
+                    "
+                  >
+                    <h4 className="font-bold text-lg leading-snug text-black mb-2">
+                      {service.title[language]}
+                    </h4>
+                    <p className="text-black/75 text-sm leading-relaxed">
+                      {service.desc[language]}
+                    </p>
+                  </div>
                 </div>
+              </button>
+            ))}
 
-                {/* BACK */}
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    [backface-visibility:hidden]
-                    [transform:rotateY(180deg)]
-                    rounded-2xl
-                    p-6
-                    flex
-                    flex-col
-                    justify-center
-                    text-center
-
-                    bg-gradient-to-br
-                    from-[#39D5F2]
-                    to-[#1591ad]
-                  "
-                >
-                  <h4 className="font-bold text-lg leading-snug text-black mb-2">
-                    {service.title[language]}
-                  </h4>
-                  <p className="text-black/75 text-sm leading-relaxed">
-                    {service.desc[language]}
-                  </p>
-                </div>
-              </div>
-            </button>
-          ))}
-
-        </div>
+          </div>
+        )}
 
       </div>
     </section>
