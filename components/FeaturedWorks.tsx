@@ -3,11 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 import { featuredWorks } from "@/data/works";
 
 const works = featuredWorks();
 
 export default function FeaturedWorks() {
+  const { language } = useLanguage();
   const gridRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -35,7 +37,7 @@ export default function FeaturedWorks() {
       className="bg-black text-white pt-20 pb-32 px-8"
     >
       <h2 className="text-lg font-bold tracking-[0.3em] text-[#39D5F2] mb-12">
-        FEATURED WORKS
+        {language === "ko" ? "주요 작품" : "FEATURED WORKS"}
       </h2>
 
       <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -59,7 +61,7 @@ export default function FeaturedWorks() {
             >
               <Image
                 src={work.poster}
-                alt={work.titleEn}
+                alt={language === "ko" ? work.titleKr : work.titleEn}
                 fill
                 className="
                   object-cover
@@ -119,7 +121,7 @@ export default function FeaturedWorks() {
                     delay-100
                   "
                 >
-                  {work.titleEn}
+                  {language === "ko" ? work.titleKr : work.titleEn}
                 </h4>
 
                 {/* Salient signature expanding line */}
@@ -164,15 +166,15 @@ export default function FeaturedWorks() {
             </div>
 
             <h3 className="mt-4 font-semibold text-lg">
-              {work.titleKr}
+              {language === "ko" ? work.titleKr : work.titleEn}
             </h3>
 
             <p className="text-neutral-300 text-sm font-semibold tracking-[0.08em] mt-1">
-              {work.titleEn}
+              {language === "ko" ? work.titleEn : work.titleKr}
             </p>
 
             <p className="text-neutral-500 text-sm mt-2">
-              {work.year}
+              {work.releaseDate ?? work.year}
             </p>
           </Link>
         ))}

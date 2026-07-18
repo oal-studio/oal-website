@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 import { studio } from "@/data/site";
 
 const services = studio.services;
 
 export default function Studio() {
+  const { language } = useLanguage();
   // 모바일 탭으로 카드 뒤집기 (PC는 호버로 동작)
   const [flipped, setFlipped] = useState<Record<number, boolean>>({});
   const toggle = (i: number) =>
@@ -20,7 +22,7 @@ export default function Studio() {
       <div className="max-w-6xl mx-auto">
 
         <h2 className="text-lg font-bold tracking-[0.3em] text-[#39D5F2] mb-12">
-          STUDIO
+          {language === "ko" ? "제작사" : "COMPANY"}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -36,7 +38,7 @@ export default function Studio() {
               {studio.name}
             </h3>
 
-            {studio.paragraphs.map((text, i) => (
+            {studio.paragraphs[language].map((text, i) => (
               <p
                 key={i}
                 className={`text-neutral-300 leading-relaxed text-lg${
@@ -65,10 +67,13 @@ export default function Studio() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-20">
 
           {services.map((service, i) => (
-            <div
-              key={service.title}
+            <button
+              type="button"
+              key={service.title.en}
               onClick={() => toggle(i)}
-              className="group h-44 [perspective:1200px] cursor-pointer"
+              aria-pressed={Boolean(flipped[i])}
+              aria-label={`${service.title[language]} — ${service.desc[language]}`}
+              className="group h-44 w-full text-left [perspective:1200px] cursor-pointer"
             >
               <div
                 className={`
@@ -104,7 +109,7 @@ export default function Studio() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h4 className="font-bold text-xl leading-snug text-white">
-                    {service.title}
+                    {service.title[language]}
                   </h4>
                 </div>
 
@@ -128,14 +133,14 @@ export default function Studio() {
                   "
                 >
                   <h4 className="font-bold text-lg leading-snug text-black mb-2">
-                    {service.title}
+                    {service.title[language]}
                   </h4>
                   <p className="text-black/75 text-sm leading-relaxed">
-                    {service.desc}
+                    {service.desc[language]}
                   </p>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
 
         </div>

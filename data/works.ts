@@ -13,10 +13,12 @@
 
 export type Work = {
   slug: string;          // URL 주소 (/works/슬러그) — 영문 소문자, 띄어쓰기 대신 -
-  category: string;      // 상단 라벨 (예: "FEATURE FILM")
+  categoryKr: string;
+  categoryEn: string;
   titleKr: string;
   titleEn: string;
   year: string;
+  releaseDate?: string;
   genreKr: string;
   genreEn: string;
   synopsisKr: string;
@@ -26,7 +28,8 @@ export type Work = {
   castKr: string;
   castEn: string;
   poster: string;        // 포스터 경로 (public 폴더 기준)
-  vimeoId: string;       // Vimeo 예고편 ID
+  trailer?: string;      // 로컬 mp4 경로
+  vimeoId?: string;      // Vimeo 예고편 ID
   stills: string[];      // 스틸컷 경로 목록
   featured: boolean;     // 홈 FEATURED WORKS 노출 여부
   hidden: boolean;       // true면 사이트 전체에서 숨김
@@ -34,8 +37,34 @@ export type Work = {
 
 export const works: Work[] = [
   {
+    slug: "ok-madam-2",
+    categoryKr: "장편영화",
+    categoryEn: "FEATURE FILM",
+    titleKr: "오케이 마담 2",
+    titleEn: "OK! MADAM: BON VOYAGE",
+    year: "2026",
+    releaseDate: "2026.08.12",
+    genreKr: "가족 액션 코미디",
+    genreEn: "Family Action Comedy",
+    synopsisKr:
+      "초호화 크루즈 여행을 떠난 전직 레전드 요원 미영과 가족들이 푸른 바다 한가운데서 크루즈 납치 사건에 휘말리며 벌어지는 코믹 액션.",
+    synopsisEn:
+      "Former legendary agent Mi-young and her family set out on a luxury cruise, only to become caught in a hijacking in the middle of the open sea.",
+    directorKr: "이철하",
+    directorEn: "Lee Cheol-ha",
+    castKr: "엄정화 · 박성웅 · 박진주 · 려운 · 최수영 · 이상윤 · 배정남",
+    castEn:
+      "Uhm Jung-hwa · Park Sung-woong · Park Jin-joo · Ryeoun · Choi Soo-young · Lee Sang-yoon · Bae Jung-nam",
+    poster: "/posters/ok-madam-2-poster.jpeg",
+    trailer: "/videos/ok-madam-2-trailer.mp4",
+    stills: [],
+    featured: true,
+    hidden: false,
+  },
+  {
     slug: "i-kill-u",
-    category: "SERIES / FEATURE FILM",
+    categoryKr: "시리즈 / 장편영화",
+    categoryEn: "SERIES / FEATURE FILM",
     titleKr: "아이 킬 유",
     titleEn: "I KILL U",
     year: "2025",
@@ -62,7 +91,8 @@ export const works: Work[] = [
   },
   {
     slug: "livestream",
-    category: "FEATURE FILM",
+    categoryKr: "장편영화",
+    categoryEn: "FEATURE FILM",
     titleKr: "라방",
     titleEn: "LIVESTREAM",
     year: "2023",
@@ -89,7 +119,8 @@ export const works: Work[] = [
   },
   {
     slug: "diva",
-    category: "FEATURE FILM",
+    categoryKr: "장편영화",
+    categoryEn: "FEATURE FILM",
     titleKr: "디바",
     titleEn: "DIVA",
     year: "2020",
@@ -116,7 +147,8 @@ export const works: Work[] = [
   },
   {
     slug: "ok-madam",
-    category: "FEATURE FILM",
+    categoryKr: "장편영화",
+    categoryEn: "FEATURE FILM",
     titleKr: "오케이 마담",
     titleEn: "OK! MADAM",
     year: "2020",
@@ -143,7 +175,8 @@ export const works: Work[] = [
   },
   {
     slug: "insane",
-    category: "FEATURE FILM",
+    categoryKr: "장편영화",
+    categoryEn: "FEATURE FILM",
     titleKr: "날, 보러와요",
     titleEn: "INSANE",
     year: "2016",

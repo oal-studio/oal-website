@@ -11,80 +11,64 @@
 export const hero = {
   video: "/videos/oal-showreel.mp4", // 배경 영상 경로 (public 폴더 기준)
   eyebrow: "OAL", // 맨 위 작은 글씨
-  titleLines: ["STORIES", "BEYOND", "BORDERS"], // 큰 제목 (줄바꿈 단위)
-  subLines: ["FILM & SERIES PRODUCTION", "SINCE 2013"], // 제목 아래 문구
+  titleLines: {
+    en: ["STORIES", "BEYOND", "BORDERS"],
+    ko: ["경계를 넘어", "세상과 만나는", "이야기"],
+  },
+  subLines: {
+    en: ["FILM & SERIES PRODUCTION", "SINCE 2013"],
+    ko: ["영화·시리즈 기획 및 제작", "2013년 설립"],
+  },
 };
 
 // 2) 상단 메뉴
 export const nav = [
-  { label: "WORKS", href: "#works" },
-  { label: "PROJECTS", href: "#projects" },
-  { label: "STUDIO", href: "#studio" },
-  { label: "CONTACT", href: "#contact" },
+  { label: { en: "WORKS", ko: "작품" }, href: "/#works" },
+  { label: { en: "COMPANY", ko: "제작사" }, href: "/#studio" },
+  { label: { en: "CONTACT", ko: "문의" }, href: "/#contact" },
 ];
 
-// 3) CURRENT SLATE (진행 중인 프로젝트 — 포스터 그리드)
-//    status 예: "In Development" / "Packaging" / "Release Scheduled" / "개봉 확정" 등
-//    잠시 숨기려면 그 줄 끝에  hidden: true  를 추가하세요.
-//
-//    포스터·예고편 넣는 법 (OKAY MADAM 2 참고)
-//     • poster:      public/posters/ 에 이미지 파일을 넣고 "/posters/파일명.jpg" 로 적기.
-//                    poster 가 없으면 "개발 중" 플레이스홀더 카드로 보입니다.
-//     • releaseDate: 개봉일이 확정되면 "2026.08.12" 처럼 적기 → 포스터에 배지로 노출.
-//     • 예고편은 둘 중 하나 (있으면 포스터에 ▶ 버튼 → 팝업 재생):
-//         - trailer:  로컬 mp4 경로 "/videos/파일명.mp4"  ※ 단, GitHub 100MB 제한을
-//                     넘는 파일은 push/배포가 안 됩니다. 그럴 땐 Vimeo 를 쓰세요.
-//         - vimeoId:  Vimeo 영상의 숫자 ID (예: vimeo.com/12345678 → "12345678")
-type SlateItem = {
-  title: string;
-  type: string;
-  status: string;
-  poster?: string; // "/posters/..." — 있으면 포스터, 없으면 개발 중 카드
-  releaseDate?: string; // "2026.08.12" — 있으면 포스터에 개봉일 배지 노출
-  trailer?: string; // 로컬 mp4 "/videos/..." (100MB 미만일 때만 배포됨)
-  vimeoId?: string; // Vimeo 예고편 ID (로컬 mp4 대신 쓸 때)
-  hidden?: boolean; // true면 화면에서 숨김 (없으면 보임)
-};
-
-export const currentSlate: SlateItem[] = [
-  {
-    title: "오케이 마담 2",
-    type: "Feature Film",
-    status: "개봉 확정",
-    poster: "/posters/ok-madam-2-poster.jpeg",
-    releaseDate: "2026.08.12",
-    trailer: "/videos/ok-madam-2-trailer.mp4", // 4.2MB — 로컬 재생 OK
-    // vimeoId: "",  // Vimeo 로 올릴 경우 여기에 숫자 ID
-  },
-  { title: "돈벼락과 연애의 상관관계", type: "Series", status: "Packaging" },
-  { title: "너를 사랑하라", type: "Feature Film", status: "In Development" },
-  { title: "냉동인간", type: "Feature Film", status: "In Development" },
-  { title: "그릇", type: "Feature Film", status: "In Development" },
-];
-
-// 4) STUDIO (소개 글 + 6개 서비스 박스)
+// 3) STUDIO (소개 글 + 6개 서비스 박스)
 export const studio = {
   eyebrow: "STORIES BEYOND BORDERS",
   name: "OAL",
-  paragraphs: [
-    "Founded in 2013, OAL develops and produces feature films and series for global audiences.",
-    "Driven by original ideas, compelling storytelling, and international collaboration, OAL creates content that connects creators, stories, and audiences across borders.",
-    "From content development and original IP creation to international co-productions and production services, OAL continues to expand its slate across Asia and beyond.",
-  ],
+  paragraphs: {
+    en: [
+      "Founded in 2013, OAL develops and produces feature films and series for global audiences.",
+      "Driven by original ideas, compelling storytelling, and international collaboration, OAL creates content that connects creators, stories, and audiences across borders.",
+      "From content development and original IP creation to international co-productions and production services, OAL continues to expand its slate across Asia and beyond.",
+    ],
+    ko: [
+      "2013년 설립된 OAL은 인생의 단 한 번뿐이어도 좋을 특별한 순간(Once in A Lifetime)과 평생 잊지 못할 추억을 선사할 수 있는 작품을 만든다는 의미를 담은 영상 콘텐츠 전문 기획 제작사입니다.",
+      "독창적인 아이디어, 힘 있는 스토리텔링, 국제적 협업을 바탕으로 창작자와 이야기, 관객을 국경 너머로 연결하는 콘텐츠를 만듭니다.",
+      "콘텐츠 개발과 오리지널 IP 창작부터 국제 공동제작, 프로덕션 서비스까지 아시아를 넘어 세계로 작품 영역을 확장하고 있습니다.",
+    ],
+  },
   // 3D 플립 박스: title(앞면) / desc(뒷면 설명)
   services: [
-    { title: "Feature Films", desc: "극장 개봉을 목표로 한 장편영화 기획·제작" },
-    { title: "Series", desc: "글로벌 시청자를 위한 드라마·시리즈 제작" },
-    { title: "Content Development", desc: "원천 기획부터 시나리오까지 콘텐츠 개발" },
-    { title: "Original IP", desc: "독창적인 이야기 기반 오리지널 IP 창작" },
-    { title: "International Co-Productions", desc: "국가 간 협업을 통한 국제 공동제작" },
-    { title: "Production Services", desc: "촬영·로케이션 등 프로덕션 전반 지원" },
+    { title: { en: "Feature Films", ko: "장편영화" }, desc: { en: "Development and production of feature films for theatrical release", ko: "극장 개봉을 목표로 한 장편영화 기획·제작" } },
+    { title: { en: "Series", ko: "시리즈" }, desc: { en: "Drama and series production for global audiences", ko: "글로벌 시청자를 위한 드라마·시리즈 제작" } },
+    { title: { en: "Content Development", ko: "콘텐츠 개발" }, desc: { en: "Content development from original concepts through screenplays", ko: "원천 기획부터 시나리오까지 콘텐츠 개발" } },
+    { title: { en: "Original IP", ko: "오리지널 IP" }, desc: { en: "Creation of original IP rooted in distinctive storytelling", ko: "독창적인 이야기 기반 오리지널 IP 창작" } },
+    { title: { en: "International Co-Productions", ko: "국제 공동제작" }, desc: { en: "International co-productions built through cross-border collaboration", ko: "국가 간 협업을 통한 국제 공동제작" } },
+    { title: { en: "Production Services", ko: "프로덕션 서비스" }, desc: { en: "End-to-end production support, including filming and locations", ko: "촬영·로케이션 등 프로덕션 전반 지원" } },
   ],
 };
 
-// 5) CONTACT (연락처)
+// 4) CONTACT (연락처)
 export const contact = {
   generalEmail: "2013oal@gmail.com",
   businessEmail: "2013oal@gmail.com",
-  location: "Seoul, Republic of Korea",
+  address: {
+    ko: "서울특별시 마포구 성암로 330 첨단산업센터 A동 406호",
+    en: "Room 406, Building A, Advanced Industry Center, 330 Seongam-ro, Mapo-gu, Seoul, Republic of Korea",
+  },
+  telephone: {
+    ko: "02-6677-1017",
+    en: "+82-2-6677-1017",
+  },
+  fax: {
+    ko: "02-6672-1017",
+    en: "+82-2-6672-1017",
+  },
 };

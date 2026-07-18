@@ -3,11 +3,12 @@
 import Navigation from "@/components/Navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 import type { Work } from "@/data/works";
 
 export default function WorkDetail({ work }: { work: Work }) {
-  const [language, setLanguage] = useState("EN");
+  const { language } = useLanguage();
+  const isKo = language === "ko";
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -15,57 +16,31 @@ export default function WorkDetail({ work }: { work: Work }) {
 
       {/* Header */}
       <section className="max-w-6xl mx-auto px-8 pt-20 pb-32">
-        <div className="flex justify-between items-center mb-12">
+        <div className="mb-12">
           <Link
             href="/#works"
             className="text-[#39D5F2] text-sm tracking-[0.15em]"
           >
-            ← BACK TO WORKS
+            ← {isKo ? "작품 목록으로" : "BACK TO WORKS"}
           </Link>
-
-          <div className="flex gap-3 text-sm">
-            <button
-              onClick={() => setLanguage("KR")}
-              className={
-                language === "KR"
-                  ? "text-[#39D5F2] font-bold"
-                  : "text-neutral-500"
-              }
-            >
-              KR
-            </button>
-
-            <span className="text-neutral-700">|</span>
-
-            <button
-              onClick={() => setLanguage("EN")}
-              className={
-                language === "EN"
-                  ? "text-[#39D5F2] font-bold"
-                  : "text-neutral-500"
-              }
-            >
-              EN
-            </button>
-          </div>
         </div>
 
         <div className="mt-8 mb-16">
           <p className="text-[#39D5F2] tracking-[0.2em] text-sm mb-4">
-            {work.category}
+            {isKo ? work.categoryKr : work.categoryEn}
           </p>
 
           <h1 className="text-5xl md:text-7xl font-bold">
-            {language === "KR" ? work.titleKr : work.titleEn}
+            {isKo ? work.titleKr : work.titleEn}
           </h1>
 
           <div className="mt-6">
             <p className="text-neutral-500 text-xs tracking-[0.15em] uppercase">
-              {language === "KR" ? "영문 제목" : "Original Title"}
+              {isKo ? "영문 제목" : "Original Title"}
             </p>
 
             <p className="text-xl text-neutral-300 mt-2">
-              {language === "KR" ? work.titleEn : work.titleKr}
+              {isKo ? work.titleEn : work.titleKr}
             </p>
           </div>
         </div>
@@ -75,7 +50,7 @@ export default function WorkDetail({ work }: { work: Work }) {
           <div className="relative aspect-[2/3]">
             <Image
               src={work.poster}
-              alt={work.titleEn}
+              alt={isKo ? `${work.titleKr} 포스터` : `${work.titleEn} poster`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -84,28 +59,26 @@ export default function WorkDetail({ work }: { work: Work }) {
 
           <div>
             <p className="text-neutral-400 mb-6">
-              {language === "KR"
-                ? `${work.year} · ${work.genreKr}`
-                : `${work.year} · ${work.genreEn}`}
+              {`${work.releaseDate ?? work.year} · ${isKo ? work.genreKr : work.genreEn}`}
             </p>
 
             <p className="text-lg leading-relaxed text-neutral-300">
-              {language === "KR" ? work.synopsisKr : work.synopsisEn}
+              {isKo ? work.synopsisKr : work.synopsisEn}
             </p>
 
             <div className="mt-12 space-y-8">
               <div>
                 <h3 className="text-[#39D5F2] text-sm tracking-[0.15em] mb-2">
-                  {language === "KR" ? "감독" : "DIRECTOR"}
+                  {isKo ? "감독" : "DIRECTOR"}
                 </h3>
-                <p>{language === "KR" ? work.directorKr : work.directorEn}</p>
+                <p>{isKo ? work.directorKr : work.directorEn}</p>
               </div>
 
               <div>
                 <h3 className="text-[#39D5F2] text-sm tracking-[0.15em] mb-2">
-                  {language === "KR" ? "출연" : "CAST"}
+                  {isKo ? "출연" : "CAST"}
                 </h3>
-                <p>{language === "KR" ? work.castKr : work.castEn}</p>
+                <p>{isKo ? work.castKr : work.castEn}</p>
               </div>
             </div>
 
@@ -128,7 +101,7 @@ export default function WorkDetail({ work }: { work: Work }) {
                   hover:text-black
                 "
               >
-                Watch Trailer
+                {isKo ? "예고편 보기" : "WATCH TRAILER"}
               </a>
             </div>
           </div>
@@ -138,16 +111,27 @@ export default function WorkDetail({ work }: { work: Work }) {
       {/* Trailer */}
       <section id="trailer" className="max-w-6xl mx-auto px-8 pb-24">
         <h2 className="text-[#39D5F2] text-lg font-bold tracking-[0.3em] mb-8">
-          TRAILER
+          {isKo ? "예고편" : "TRAILER"}
         </h2>
 
-        <div className="w-full aspect-video rounded-lg overflow-hidden">
-          <iframe
-            src={`https://player.vimeo.com/video/${work.vimeoId}`}
-            className="w-full h-full"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          />
+        <div className="w-full aspect-video rounded-lg overflow-hidden bg-neutral-950">
+          {work.trailer ? (
+            <video
+              src={work.trailer}
+              controls
+              preload="metadata"
+              className="h-full w-full"
+              aria-label={isKo ? `${work.titleKr} 예고편` : `${work.titleEn} trailer`}
+            />
+          ) : work.vimeoId ? (
+            <iframe
+              src={`https://player.vimeo.com/video/${work.vimeoId}`}
+              title={isKo ? `${work.titleKr} 예고편` : `${work.titleEn} trailer`}
+              className="w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          ) : null}
         </div>
       </section>
 
@@ -155,7 +139,7 @@ export default function WorkDetail({ work }: { work: Work }) {
       {work.stills.length > 0 && (
         <section className="max-w-6xl mx-auto px-8 pb-32">
           <h2 className="text-[#39D5F2] text-lg font-bold tracking-[0.3em] mb-8">
-            STILLS
+            {isKo ? "스틸" : "STILLS"}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -163,7 +147,7 @@ export default function WorkDetail({ work }: { work: Work }) {
               <Image
                 key={src}
                 src={src}
-                alt={`${work.titleEn} Still ${i + 1}`}
+                alt={isKo ? `${work.titleKr} 스틸 ${i + 1}` : `${work.titleEn} still ${i + 1}`}
                 width={1200}
                 height={800}
                 className="w-full"
