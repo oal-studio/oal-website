@@ -43,7 +43,7 @@ export const works: Work[] = [
     titleKr: "오케이 마담 2",
     titleEn: "OK! MADAM: BON VOYAGE",
     year: "2026",
-    releaseDate: "2026.08.12",
+    releaseDate: "2026.08.12 개봉 예정",
     genreKr: "가족 액션 코미디",
     genreEn: "Family Action Comedy",
     synopsisKr:
