@@ -17,9 +17,9 @@ export default function Contact() {
           {language === "ko" ? "문의" : "CONTACT"}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
 
-          <div>
+          <div className="rounded-2xl bg-[#E4FD97] p-8 text-neutral-950 md:p-10">
 
             <h3 className="text-2xl font-bold mb-8">
               {language === "ko" ? "문의하기" : "Get In Touch"}
@@ -28,21 +28,21 @@ export default function Contact() {
             <div className="space-y-8">
 
               <div>
-                <p className="text-neutral-500 text-sm tracking-[0.15em] mb-2">
+                <p className="text-neutral-700 text-sm tracking-[0.15em] mb-2">
                   {language === "ko" ? "일반 문의" : "GENERAL INQUIRIES"}
                 </p>
 
-                <p className="text-lg">
+                <p className="text-lg text-neutral-950">
                   {contact.generalEmail}
                 </p>
               </div>
 
               <div>
-                <p className="text-neutral-500 text-sm tracking-[0.15em] mb-2">
+                <p className="text-neutral-700 text-sm tracking-[0.15em] mb-2">
                   {language === "ko" ? "비즈니스 및 공동제작" : "BUSINESS & CO-PRODUCTIONS"}
                 </p>
 
-                <p className="text-lg">
+                <p className="text-lg text-neutral-950">
                   {contact.businessEmail}
                 </p>
               </div>
@@ -51,22 +51,22 @@ export default function Contact() {
 
           </div>
 
-          <div>
+          <div className="rounded-2xl bg-[#E4FD97] p-8 text-neutral-950 md:p-10">
 
             <h3 className="text-2xl font-bold mb-8">
               {language === "ko" ? "주소" : "Address"}
             </h3>
 
-            <p className="text-neutral-300 text-lg">
+            <p className="text-neutral-800 text-lg">
               {contact.address[language]}
             </p>
 
-            <div className="mt-4 space-y-1 text-neutral-300 text-base">
+            <div className="mt-4 space-y-1 text-neutral-800 text-base">
               <p>
                 TEL.{" "}
                 <a
                   href={language === "ko" ? "tel:0266771017" : "tel:+82266771017"}
-                  className="transition-colors hover:text-[#39D5F2]"
+                  className="underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
                 >
                   {contact.telephone[language]}
                 </a>

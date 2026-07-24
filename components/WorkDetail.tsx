@@ -115,21 +115,21 @@ export default function WorkDetail({ work }: { work: Work }) {
         </h2>
 
         <div className="w-full aspect-video rounded-lg overflow-hidden bg-neutral-950">
-          {work.trailer ? (
-            <video
-              src={work.trailer}
-              controls
-              preload="metadata"
-              className="h-full w-full"
-              aria-label={isKo ? `${work.titleKr} 예고편` : `${work.titleEn} trailer`}
-            />
-          ) : work.vimeoId ? (
+          {work.vimeoId ? (
             <iframe
               src={`https://player.vimeo.com/video/${work.vimeoId}`}
               title={isKo ? `${work.titleKr} 예고편` : `${work.titleEn} trailer`}
               className="w-full h-full"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
+            />
+          ) : work.trailer ? (
+            <video
+              src={work.trailer}
+              controls
+              preload="metadata"
+              className="h-full w-full"
+              aria-label={isKo ? `${work.titleKr} 예고편` : `${work.titleEn} trailer`}
             />
           ) : null}
         </div>

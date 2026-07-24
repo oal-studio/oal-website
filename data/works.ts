@@ -57,6 +57,7 @@ export const works: Work[] = [
       "Uhm Jung-hwa · Park Sung-woong · Park Jin-joo · Ryeoun · Choi Soo-young · Lee Sang-yoon · Bae Jung-nam",
     poster: "/posters/ok-madam-2-poster.jpeg",
     trailer: "/videos/ok-madam-2-trailer.mp4",
+    vimeoId: "1212716915",
     stills: [],
     featured: true,
     hidden: false,
