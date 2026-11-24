@@ -100,9 +100,9 @@ export const works: Work[] = [
     genreKr: "범죄 스릴러",
     genreEn: "Crime Thriller",
     synopsisKr:
-      "프리랜서 방송 PD 동주는 여자친구 수진의 생일을 준비하던 중 의문의 링크를 받는다. 링크가 열리자 불법 생방송 화면에 의식을 잃은 수진이 나타난다. 동주는 수진을 구하기 위해 방송에 접속하고, ‘젠틀맨’이라 불리는 정체불명의 진행자와 맞선다.",
+      "“내 여자친구가 인터넷 몰카 라이브 방송에 나온다?!” 대기업 취업도 쉽지 않고 친구가 보낸 불법 몰카 라이브 방송 링크를 여자친구 수진에게 들켜 헤어질 위기에 처한 프리랜서 PD ‘동주’. 수진의 생일날 이벤트를 준비하던 중 의문의 라이브 방송 링크가 전송되고 링크가 자동으로 열리는데… “아이디 486번 고객님이 입장되었습니다” 실시간으로 시작되는 몰카 라이브 방송! 그런데 모니터를 통해 여자친구 ‘수진’이 나타나고 동주는 충격에 빠지게 된다. 정체불명의 ‘젠틀맨’과 정신을 잃은 ‘수진’, ‘동주’는 사랑하는 수진을 구하기 위해 라이브 방송에 참여하기 시작하지만 ‘젠틀맨’은 라이브 방송을 점점 최악의 상황으로 끌고 가는데… 1분 1초를 다투는 숨 막히는 실시간 라이브 추격전이 시작된다!",
     synopsisEn:
-      "Freelance TV producer Dong-ju is planning a birthday surprise for his girlfriend, Su-jin, when a mysterious link arrives. It leads to an illegal livestream where he sees her unconscious. To save her, he enters the livestream and confronts its host, a man known only as the Gentleman.",
+      "“Is that my girlfriend on a hidden-camera livestream?!” Freelance TV producer Dong-ju is struggling to land a job at a major company. Then his girlfriend Su-jin discovers a link a friend sent him to an illegal hidden-camera livestream, and the couple is on the verge of breaking up. On Su-jin’s birthday, Dong-ju is getting a surprise ready for her when a mysterious link arrives and opens by itself. “User 486 has joined.” A hidden-camera feed goes live. To his horror, Su-jin is on screen, unconscious. Dong-ju joins the livestream to save her, but the mysterious host, known as the Gentleman, keeps escalating the situation. The chase unfolds live, and every second counts.",
     directorKr: "최주연",
     directorEn: "Choi Ju-yeon",
     castKr: "박성웅 · 박선호 · 김희정",
