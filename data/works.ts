@@ -184,7 +184,7 @@ export const works: Work[] = [
     genreKr: "미스터리 스릴러",
     genreEn: "Mystery Thriller",
     synopsisKr:
-      "대낮 도심에서 강수아는 영문도 모른 채 정신병원으로 끌려간다. 병원에 갇힌 수아는 그곳에서 겪은 학대를 수첩에 기록한다. 1년 뒤, 수첩을 받은 시사 프로그램 PD 나남수는 수아를 찾아간다. 병원 화재의 유일한 생존자인 수아는 살인 용의자로 수감돼 있다.",
+      "정신병동 감금 106일째 난 미치지 않았어요… 대낮 도심 한복판, 강수아(강예원)는 이유도 모른 채 정신병원에 강제이송, 감금된다. 강제 약물 투여와 무자비한 폭력 속에 시달리던 수아는 이 곳에서의 끔직한 일들을 세세하게 기록하기 시작한다. 합법적 감금. 그 이면의 충격적 사실 누가, 왜, 그녀를 가두었는가? 그로부터 일년 뒤, 시사프로 ‘추적24시’ 나남수(이상윤)PD에게 수첩이 배달된다. 나PD는 믿기 힘든 사건들이 기록된 이 수첩의 진실을 밝히고자 강수아를 찾아갔지만, 그녀는 현재 살인사건 용의자로 수감되어 있다. 취재를 거듭할수록 드러나는 충격적 사실들!!! 과연 무엇이 진실이고 무엇이 거짓일까?",
     synopsisEn:
       "Kang Su-a is taken off a city street in broad daylight and locked in a psychiatric hospital, where she begins documenting the abuse she endures. A year later, investigative TV producer Na Nam-soo receives her notebook. When he tracks her down, she is the sole survivor of the hospital fire and is in custody on suspicion of murder.",
     directorKr: "이철하",
