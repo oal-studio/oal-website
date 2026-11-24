@@ -100,9 +100,9 @@ export const works: Work[] = [
     genreKr: "범죄 스릴러",
     genreEn: "Crime Thriller",
     synopsisKr:
-      "실종 사건을 추적하던 인기 스트리머 동주는 라이브 방송 도중 연쇄살인범과 연결된다. 방송이 실시간으로 진행되는 가운데 그는 사건의 진실과 마주하게 된다.",
+      "프리랜서 방송 PD 동주는 여자친구 수진의 생일을 준비하던 중 의문의 링크를 받는다. 링크가 열리자 불법 생방송 화면에 의식을 잃은 수진이 나타난다. 동주는 수진을 구하기 위해 방송에 접속하고, ‘젠틀맨’이라 불리는 정체불명의 진행자와 맞선다.",
     synopsisEn:
-      "While investigating a disappearance, popular livestreamer Dong-joo becomes entangled with a serial killer. As thousands watch online, he races against time to uncover the truth.",
+      "Freelance TV producer Dong-ju is planning a birthday surprise for his girlfriend, Su-jin, when a mysterious link arrives. It leads to an illegal livestream where he sees her unconscious. To save her, he enters the livestream and confronts its host, a man known only as the Gentleman.",
     directorKr: "최주연",
     directorEn: "Choi Ju-yeon",
     castKr: "박성웅 · 박선호 · 김희정",
@@ -184,9 +184,9 @@ export const works: Work[] = [
     genreKr: "미스터리 스릴러",
     genreEn: "Mystery Thriller",
     synopsisKr:
-      "살인 사건을 목격한 강수아는 정신병원에 강제로 수용된 뒤 망상증 환자로 몰린다. 그녀의 사연에 관심을 가진 시사 프로그램 PD 나남수는 사건을 추적하기 시작하고, 정신병원에 감춰진 충격적인 진실에 다가가게 된다.",
+      "대낮 도심에서 강수아는 영문도 모른 채 정신병원으로 끌려간다. 병원에 갇힌 수아는 그곳에서 겪은 학대를 수첩에 기록한다. 1년 뒤, 수첩을 받은 시사 프로그램 PD 나남수는 수아를 찾아간다. 병원 화재의 유일한 생존자인 수아는 살인 용의자로 수감돼 있다.",
     synopsisEn:
-      "After witnessing a murder, a young woman is forcibly confined to a psychiatric hospital and branded as mentally unstable. When television producer Na Nam-soo takes an interest in her case, his investigation leads him into a web of corruption, abuse, and buried truths.",
+      "Kang Su-a is taken off a city street in broad daylight and locked in a psychiatric hospital, where she begins documenting the abuse she endures. A year later, investigative TV producer Na Nam-soo receives her notebook. When he tracks her down, she is the sole survivor of the hospital fire and is in custody on suspicion of murder.",
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "강예원 · 이상윤",
