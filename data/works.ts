@@ -47,9 +47,9 @@ export const works: Work[] = [
     genreKr: "가족 액션 코미디",
     genreEn: "Family Action Comedy",
     synopsisKr:
-      "초호화 크루즈 여행을 떠난 전직 레전드 요원 미영과 가족들이 푸른 바다 한가운데서 크루즈 납치 사건에 휘말리며 벌어지는 코믹 액션.",
+      "사춘기 딸과의 전쟁, 허세 충만 백수 남편, 꽈배기집 폐업 위기까지. 지긋지긋한 현생을 견뎌오던 미영에게 초호화 크루즈 결혼식 초대장이 도착한다. “우리, 진짜 여행 가자!” 화려한 크루즈 여행을 만끽하던 것도 잠시. 범죄 조직의 리더 안야의 등장에 수백명이 탑승한 크루즈는 순식간에 사상 초유의 납치 사건 현장이 되어버린다. 도망칠 곳 없는 푸른 바다 한복판, 다시 한번 각성한 전직 레전드 요원 미영은 이제 가족을 구하고 세상을 지켜야 할 위험한 작전에 뛰어든다!",
     synopsisEn:
-      "Former legendary agent Mi-young and her family set out on a luxury cruise, only to become caught in a hijacking in the middle of the open sea.",
+      "Between clashing with her teenage daughter, putting up with her unemployed, all-talk husband, and trying to keep her twisted doughnut shop afloat, Mi-young has had enough. Then an invitation arrives for a wedding aboard a luxury cruise ship. “Let’s go on a real vacation!” The family is barely settled into life on board when crime boss Anya shows up and the ship, with hundreds of people aboard, is suddenly hijacked. With nowhere to run in the middle of the ocean, the once-legendary agent Mi-young is back in action on a dangerous mission to save her family and protect the world.",
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "엄정화 · 박성웅 · 박진주 · 려운 · 최수영 · 이상윤 · 배정남",
