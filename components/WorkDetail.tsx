@@ -126,6 +126,19 @@ export default function WorkDetail({ work }: { work: Work }) {
               </section>
             )}
 
+            {work.festivalSelections && work.festivalSelections.length > 0 && (
+              <section className="mt-6">
+                <h3 className="mb-2 text-sm tracking-[0.15em] text-[#39D5F2]">
+                  {isKo ? "영화제 초청" : "FESTIVAL SELECTIONS"}
+                </h3>
+                <ul className="list-disc space-y-2 pl-5 text-neutral-300">
+                  {work.festivalSelections.map((selection) => (
+                    <li key={selection.en}>{isKo ? selection.kr : selection.en}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <div className="mt-12 space-y-8">
               <div>
                 <h3 className="text-[#39D5F2] text-sm tracking-[0.15em] mb-2">

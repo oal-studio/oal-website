@@ -24,6 +24,7 @@ export type Work = {
   synopsisKr: string;
   synopsisEn: string;
   awards?: { kr: string; en: string }[];
+  festivalSelections?: { kr: string; en: string }[];
   directorKr: string;
   directorEn: string;
   castKr: string;
@@ -51,6 +52,12 @@ export const works: Work[] = [
       "사춘기 딸과의 전쟁, 허세 충만 백수 남편, 꽈배기집 폐업 위기까지. 지긋지긋한 현생을 견뎌오던 미영에게 초호화 크루즈 결혼식 초대장이 도착한다. “우리, 진짜 여행 가자!” 화려한 크루즈 여행을 만끽하던 것도 잠시. 범죄 조직의 리더 안야의 등장에 수백명이 탑승한 크루즈는 순식간에 사상 초유의 납치 사건 현장이 되어버린다. 도망칠 곳 없는 푸른 바다 한복판, 다시 한번 각성한 전직 레전드 요원 미영은 이제 가족을 구하고 세상을 지켜야 할 위험한 작전에 뛰어든다!",
     synopsisEn:
       "Between clashing with her teenage daughter, putting up with her unemployed, all-talk husband, and trying to keep her twisted doughnut shop afloat, Mi-young has had enough. Then an invitation arrives for a wedding aboard a luxury cruise ship. “Let’s go on a real vacation!” The family is barely settled into life on board when crime boss Anya shows up and the ship, with hundreds of people aboard, is suddenly hijacked. With nowhere to run in the middle of the ocean, the once-legendary agent Mi-young is back in action on a dangerous mission to save her family and protect the world.",
+    festivalSelections: [
+      {
+        kr: "2026 제8회 대전특수영상영화제 · 개막작",
+        en: "2026 Daejeon Special Visual Effects Film Festival (DFX) · Opening Film",
+      },
+    ],
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "엄정화 · 박성웅 · 박진주 · 려운 · 최수영 · 이상윤 · 배정남",
@@ -80,6 +87,12 @@ export const works: Work[] = [
       {
         kr: "2025 제29회 부천국제판타스틱영화제 · 멜리에스국제영화제연맹(MIFF) 아시아 영화상",
         en: "2025 29th Bucheon International Fantastic Film Festival (BIFAN) · Méliès International Festivals Federation (MIFF) Award for Best Asian Film",
+      },
+    ],
+    festivalSelections: [
+      {
+        kr: "2025 제29회 부천국제판타스틱영화제 · 아드레날린 라이드, 월드 프리미어",
+        en: "2025 Bucheon International Fantastic Film Festival (BIFAN) · Adrenaline Ride, World Premiere",
       },
     ],
     directorKr: "유하",
@@ -144,6 +157,16 @@ export const works: Work[] = [
         en: "2021 41st Golden Cinematography Awards · Best Lighting (Cho Gyu-yeong)",
       },
     ],
+    festivalSelections: [
+      {
+        kr: "2021 제39회 브뤼셀 국제판타스틱영화제 · 비경쟁 부문",
+        en: "2021 Brussels International Fantastic Film Festival (BIFFF) · Out of Competition",
+      },
+      {
+        kr: "2021 제25회 부천국제판타스틱영화제 · 코리안 판타스틱: 장편",
+        en: "2021 Bucheon International Fantastic Film Festival (BIFAN) · Korean Fantastic: Features",
+      },
+    ],
     directorKr: "조슬예",
     directorEn: "Jo Seul-ye",
     castKr: "신민아 · 이유영",
@@ -176,6 +199,28 @@ export const works: Work[] = [
       {
         kr: "2021 스위스 뇌샤텔 국제판타스틱영화제 · 아시아 영화 관객상",
         en: "2021 Neuchâtel International Fantastic Film Festival (Switzerland) · Audience Award for Best Asian Film",
+      },
+    ],
+    festivalSelections: [
+      {
+        kr: "2020 제15회 파리한국영화제 · 개막작",
+        en: "2020 Festival du Film Coréen à Paris (FFCP) · Opening Film",
+      },
+      {
+        kr: "2021 제23회 우디네 극동영화제",
+        en: "2021 Udine Far East Film Festival (FEFF)",
+      },
+      {
+        kr: "2021 스위스 뇌샤텔 국제판타스틱영화제 · 아시아의 새로운 영화 부문",
+        en: "2021 Neuchâtel International Fantastic Film Festival (NIFFF) · New Cinema from Asia",
+      },
+      {
+        kr: "2021 캐나다 이탈리아현대영화제 · 한국영화의 날",
+        en: "2021 Italian Contemporary Film Festival (ICFF), Canada · Korean Film Day",
+      },
+      {
+        kr: "2021 스웨덴 아시아영화제",
+        en: "2021 Asian Film Festival (Asiatiska Filmfestivalen), Sweden",
       },
     ],
     directorKr: "이철하",
@@ -216,6 +261,12 @@ export const works: Work[] = [
         en: "2016 Korean Film Star Awards · Popularity Award (Kang Ye-won)",
       },
     ],
+    festivalSelections: [
+      {
+        kr: "2016 제20회 부천국제판타스틱영화제 · 코리안 판타스틱: 장편",
+        en: "2016 Bucheon International Fantastic Film Festival (BIFAN) · Korean Fantastic: Features",
+      },
+    ],
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "강예원 · 이상윤",
@@ -242,10 +293,16 @@ export const works: Work[] = [
     genreEn: "Comedy Drama",
     synopsisKr: "프리랜서 작가를 꿈꾸는 유양은 아르바이트를 전전하면서도 끼니만은 거르지 않는다. 엉뚱하고 순수한 박병과 가까워지면서, 유양의 일상에 예기치 않은 연애가 찾아온다. 들개이빨의 동명 웹툰을 바탕으로, 두 사람의 일과 사랑, 먹고사는 문제를 유쾌하게 그린다.",
     synopsisEn: "Aspiring freelance writer Yoo Yang scrapes by on part-time jobs, but she never skips a meal. When she grows close to the endearingly eccentric Park Byeong, romance takes her by surprise. Adapted from Deulgae Ippal’s webtoon of the same name, this comedy follows two young people as they fall in love and try to make a living.",
+    festivalSelections: [
+      {
+        kr: "2016 제31회 산타바바라 국제영화제 · 스크린 퀴진, 미국 프리미어",
+        en: "2016 Santa Barbara International Film Festival (SBIFF) · Screen Cuisine, U.S. Premiere",
+      },
+    ],
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
-    castKr: "안영미 · 노민우 · 유소영",
-    castEn: "Ahn Young-mi · Noh Min-woo · Yoo So-young",
+    castKr: "안영미 · 노민우 · 유소영 · 이병헌",
+    castEn: "Ahn Young-mi · Noh Min-woo · Yoo So-young · Lee Byoung-heon",
     poster: "/posters/i-eat-therefore-i-am-green-poster.webp",
     stills: [],
     featured: true,
