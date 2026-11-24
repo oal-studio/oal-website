@@ -66,7 +66,12 @@ export const works: Work[] = [
     poster: "/posters/ok-madam-2-poster.jpeg",
     trailer: "/videos/ok-madam-2-trailer.mp4",
     vimeoId: "1212716915",
-    stills: [],
+    stills: [
+      "/stills/ok-madam-2-01.webp",
+      "/stills/ok-madam-2-02.webp",
+      "/stills/ok-madam-2-03.webp",
+      "/stills/ok-madam-2-04.webp",
+    ],
     featured: true,
     hidden: false,
   },
@@ -253,8 +258,8 @@ export const works: Work[] = [
       "Day 106 in the psychiatric ward. “I’m not insane…” In broad daylight on a city street, Kang Su-a (Kang Ye-won) is forcibly taken to a psychiatric hospital and locked up without being told why. Subjected to forced medication and brutal violence, she begins keeping a detailed record of what happens inside. Her confinement is legal. Who locked her up, and why? A year later, Na Nam-soo (Lee Sang-yoon), a producer for the investigative TV program Tracking 24, receives her notebook. Troubled by what he reads, he tracks Su-a down to find out what happened. By then, she is in custody on suspicion of murder. As his investigation deepens, disturbing new details emerge. What is true, and what is a lie?",
     awards: [
       {
-        kr: "2016 제17회 올해의 여성영화인상 · 제작자상 (김윤미, 김이정, 최연주)",
-        en: "2016 17th Women in Film Korea Awards · Producer Award (Kim Yoon-mi, Kim Yi-jung, Choi Yeon-ju)",
+        kr: "2016 제17회 올해의 여성영화인상 · 제작자상",
+        en: "2016 17th Women in Film Korea Awards · Producer Award",
       },
       {
         kr: "2016 한국영화를 빛낸 스타상 · 인기상 (강예원)",
@@ -304,7 +309,12 @@ export const works: Work[] = [
     castKr: "안영미 · 노민우 · 유소영 · 이병헌",
     castEn: "Ahn Young-mi · Noh Min-woo · Yoo So-young · Lee Byoung-heon",
     poster: "/posters/i-eat-therefore-i-am-green-poster.webp",
-    stills: [],
+    stills: [
+      "/stills/i-eat-therefore-i-am-01.webp",
+      "/stills/i-eat-therefore-i-am-02.webp",
+      "/stills/i-eat-therefore-i-am-03.webp",
+      "/stills/i-eat-therefore-i-am-04.webp",
+    ],
     featured: true,
     hidden: false,
   },
