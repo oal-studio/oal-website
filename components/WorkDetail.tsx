@@ -113,6 +113,19 @@ export default function WorkDetail({ work }: { work: Work }) {
               {isKo ? work.synopsisKr : work.synopsisEn}
             </p>
 
+            {work.awards && work.awards.length > 0 && (
+              <section className="mt-6">
+                <h3 className="mb-2 text-sm tracking-[0.15em] text-[#39D5F2]">
+                  {isKo ? "수상 내역" : "AWARDS"}
+                </h3>
+                <ul className="list-disc space-y-2 pl-5 text-neutral-300">
+                  {work.awards.map((award) => (
+                    <li key={award.en}>{isKo ? award.kr : award.en}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <div className="mt-12 space-y-8">
               <div>
                 <h3 className="text-[#39D5F2] text-sm tracking-[0.15em] mb-2">

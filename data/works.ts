@@ -23,6 +23,7 @@ export type Work = {
   genreEn: string;
   synopsisKr: string;
   synopsisEn: string;
+  awards?: { kr: string; en: string }[];
   directorKr: string;
   directorEn: string;
   castKr: string;
@@ -75,6 +76,12 @@ export const works: Work[] = [
       "태권도 유망주였던 강선우는 병원에 입원한 어머니의 치료비를 마련하기 위해 힘겨운 삶을 이어간다. 어느 날 자신과 똑같이 생긴 재벌가 후계자 한지연의 대역이 된 그녀는 거대한 음모와 권력 다툼의 중심에 휘말리게 되고, 살아남기 위한 위험한 싸움을 시작한다.",
     synopsisEn:
       "Former taekwondo prodigy Kang Sun-woo struggles to support her hospitalized mother until she is recruited to impersonate Han Ji-yeon, the heiress of a powerful conglomerate. Drawn into a dangerous web of conspiracy and succession battles, she must fight to survive and uncover the truth.",
+    awards: [
+      {
+        kr: "2025 제29회 부천국제판타스틱영화제 · 멜리에스국제영화제연맹(MIFF) 아시아 영화상",
+        en: "2025 29th Bucheon International Fantastic Film Festival (BIFAN) · Méliès International Festivals Federation (MIFF) Award for Best Asian Film",
+      },
+    ],
     directorKr: "유하",
     directorEn: "Yoo Ha",
     castKr: "강지영 · 이기광 · 엄태웅",
@@ -131,6 +138,12 @@ export const works: Work[] = [
       "다이빙계 최고의 스타 이영은 의문의 사고 이후 기억을 잃는다. 사고의 진실을 추적하던 그녀는 가장 가까웠던 친구 수진과 자신을 둘러싼 충격적인 비밀에 직면하게 된다.",
     synopsisEn:
       "After a mysterious accident leaves champion diver Lee Young with fragmented memories, she begins uncovering disturbing truths surrounding her closest friend and rival, Soo-jin.",
+    awards: [
+      {
+        kr: "2021 제41회 황금촬영상영화제 · 조명상 (조규영)",
+        en: "2021 41st Golden Cinematography Awards · Best Lighting (Cho Gyu-yeong)",
+      },
+    ],
     directorKr: "조슬예",
     directorEn: "Jo Seul-ye",
     castKr: "신민아 · 이유영",
@@ -159,6 +172,12 @@ export const works: Work[] = [
       "생애 첫 해외여행을 떠난 꽈배기집 사장 미영과 남편 석환. 하와이행 비행기 안에서 정체불명의 테러 사건이 발생하자, 평범한 주부로 보였던 미영은 숨겨왔던 특별한 능력을 드러내며 승객들을 구하기 위한 작전에 나선다.",
     synopsisEn:
       "During her first overseas trip, Mi-young, a seemingly ordinary doughnut shop owner, finds herself aboard a hijacked flight bound for Hawaii. As chaos erupts in the air, she reveals a hidden past and takes matters into her own hands to save the passengers.",
+    awards: [
+      {
+        kr: "2021 스위스 뇌샤텔 국제판타스틱영화제 · 아시아 영화 관객상",
+        en: "2021 Neuchâtel International Fantastic Film Festival (Switzerland) · Audience Award for Best Asian Film",
+      },
+    ],
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "엄정화 · 박성웅 · 이상윤 · 배정남",
@@ -187,6 +206,16 @@ export const works: Work[] = [
       "정신병동 감금 106일째 난 미치지 않았어요… 대낮 도심 한복판, 강수아(강예원)는 이유도 모른 채 정신병원에 강제이송, 감금된다. 강제 약물 투여와 무자비한 폭력 속에 시달리던 수아는 이 곳에서의 끔직한 일들을 세세하게 기록하기 시작한다. 합법적 감금. 그 이면의 충격적 사실 누가, 왜, 그녀를 가두었는가? 그로부터 일년 뒤, 시사프로 ‘추적24시’ 나남수(이상윤)PD에게 수첩이 배달된다. 나PD는 믿기 힘든 사건들이 기록된 이 수첩의 진실을 밝히고자 강수아를 찾아갔지만, 그녀는 현재 살인사건 용의자로 수감되어 있다. 취재를 거듭할수록 드러나는 충격적 사실들!!! 과연 무엇이 진실이고 무엇이 거짓일까?",
     synopsisEn:
       "Day 106 in the psychiatric ward. “I’m not insane…” In broad daylight on a city street, Kang Su-a (Kang Ye-won) is forcibly taken to a psychiatric hospital and locked up without being told why. Subjected to forced medication and brutal violence, she begins keeping a detailed record of what happens inside. Her confinement is legal. Who locked her up, and why? A year later, Na Nam-soo (Lee Sang-yoon), a producer for the investigative TV program Tracking 24, receives her notebook. Troubled by what he reads, he tracks Su-a down to find out what happened. By then, she is in custody on suspicion of murder. As his investigation deepens, disturbing new details emerge. What is true, and what is a lie?",
+    awards: [
+      {
+        kr: "2016 제17회 올해의 여성영화인상 · 제작자상 (김윤미, 김이정, 최연주)",
+        en: "2016 17th Women in Film Korea Awards · Producer Award (Kim Yoon-mi, Kim Yi-jung, Choi Yeon-ju)",
+      },
+      {
+        kr: "2016 한국영화를 빛낸 스타상 · 인기상 (강예원)",
+        en: "2016 Korean Film Star Awards · Popularity Award (Kang Ye-won)",
+      },
+    ],
     directorKr: "이철하",
     directorEn: "Lee Cheol-ha",
     castKr: "강예원 · 이상윤",
@@ -217,7 +246,7 @@ export const works: Work[] = [
     directorEn: "Lee Cheol-ha",
     castKr: "안영미 · 노민우 · 유소영",
     castEn: "Ahn Young-mi · Noh Min-woo · Yoo So-young",
-    poster: "/posters/i-eat-therefore-i-am-alt-poster.webp",
+    poster: "/posters/i-eat-therefore-i-am-green-poster.webp",
     stills: [],
     featured: true,
     hidden: false,
