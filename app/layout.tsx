@@ -3,6 +3,7 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.oal2013.com"),
   title: {
     default: "OAL | Stories Beyond Borders",
     template: "%s | OAL",
