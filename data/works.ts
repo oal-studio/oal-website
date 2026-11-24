@@ -202,6 +202,27 @@ export const works: Work[] = [
     featured: true,
     hidden: false,
   },
+  {
+    slug: "i-eat-therefore-i-am",
+    categoryKr: "웹드라마 · 10부작",
+    categoryEn: "WEB SERIES · 10 EPISODES",
+    titleKr: "먹는 존재",
+    titleEn: "I EAT, THEREFORE I AM",
+    year: "2015",
+    releaseDate: "2015.11.12",
+    genreKr: "코미디 드라마",
+    genreEn: "Comedy Drama",
+    synopsisKr: "프리랜서 작가를 꿈꾸는 유양은 아르바이트를 전전하면서도 끼니만은 거르지 않는다. 엉뚱하고 순수한 박병과 가까워지면서, 유양의 일상에 예기치 않은 연애가 찾아온다. 들개이빨의 동명 웹툰을 바탕으로, 두 사람의 일과 사랑, 먹고사는 문제를 유쾌하게 그린다.",
+    synopsisEn: "Aspiring freelance writer Yoo Yang scrapes by on part-time jobs, but she never skips a meal. When she grows close to the endearingly eccentric Park Byeong, romance takes her by surprise. Adapted from Deulgae Ippal’s webtoon of the same name, this comedy follows two young people as they fall in love and try to make a living.",
+    directorKr: "이철하",
+    directorEn: "Lee Cheol-ha",
+    castKr: "안영미 · 노민우 · 유소영",
+    castEn: "Ahn Young-mi · Noh Min-woo · Yoo So-young",
+    poster: "/posters/i-eat-therefore-i-am-poster.webp",
+    stills: [],
+    featured: true,
+    hidden: false,
+  },
 ];
 
 // 사이트에 보이는(숨김 아님) 모든 작품
